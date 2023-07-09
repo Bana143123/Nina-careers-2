@@ -5,13 +5,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    {% include 'nav.html' %}
   </head>
   <body>
     <div class='container'>
       <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
-      <img class='img-fluid' src='/static/banner.jpg' height:"150" width:"1300">
+      <img class='img-fluid' src='/static/fragrance.jpg' style="height:400px;width:100%">
       <h2 class="text-center mt-2 mb-4">About Nina</h2>
-      <p class='lead'>Nina is a technology company that offers a platform for collaborative data science and machine learning. It provides a cloud-based platform where data scientists and machine learning practitioners can work together, share their projects, and collaborate on data analysis and model development.</p>
+     <div class="row">
+       <div class="col-md-8">
+      <p class='lead'>Nina Ricci has represented bold and optimistic femininity since its inception. In 1946, the Maison created its very first perfume, Coeur de Joie, followed by the iconic L’Air du Temps in 1948, embodying the timelessness of the house.
+More than a brand, Nina Ricci encourages women to flourish and feel their best. Independent, powerful and elevated by a sincere beauty, the Nina Ricci woman is empowered to reveal the charm of her emotions and fulfil her deepest desires.</p></div>
+      <div class="d-none d-md-block col-md-4">
+        <img src="/static/side2.jpg" style="height:200px;border-radius:4px">
+      </div></div>
       <h3 class="text-center mt-2 mb-4">Job Openings</h3>
       <div>
         {% for job in jobs %}
@@ -19,9 +26,9 @@
         {% endfor %}
       </div>
       <div class="text-center">
-      <button class="btn btn-primary btn-lg">Contact Us!</button>
-      <p class="mt-4">&copy;Copyright 2023, All rights reserved by Nina. &#x2764;
-</p>
+      <a  href="mailto:Ninaforfuture@Nina.com?subject=Queries%20regarding%20jobtitle&body=Jobtitle%20%3A%0D%0Aquery%20%3A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0ARegards%2C%0D%0A%5BYour%20Signature%5D"class="btn btn-primary btn-lg">Contact Us!</a>
+      
+        {% include 'footer.html' %}
       </div>
     </div>
   </body>
