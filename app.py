@@ -1,8 +1,10 @@
 from flask import Flask,render_template,jsonify
+from database import engine
+from sqlalchemy import text
 
 app = Flask(__name__)
 
-JOBS=[
+'''JOBS=[
   {
     'id':1,
     'title':'Hair Groomer',
@@ -27,15 +29,24 @@ JOBS=[
     'salary':'Rs.1,70,000'
   }
 ]
+'''
+def fetchjobsfromdb():
+  with engine.connect() as conn:
+    result = conn.execute(text("select * from JOBS"))
+    jobs=[dict(row._asdict()) for row in result]
+    return jobs
+    
 
 @app.route('/')
 def hello_world():
+  jobs=fetchjobsfromdb()
   return render_template('home.html',
-                        jobs=JOBS,
+                        jobs=jobs,
                         company_name='Nina')
 @app.route('/jobs')
 def job_item():
-  return jsonify(JOBS)
+  jobs=fetchjobsfromdb()
+  return jsonify(jobs)
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0',debug=True)
