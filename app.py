@@ -1,6 +1,5 @@
 from flask import Flask,render_template,jsonify
-from database import engine
-from sqlalchemy import text
+from database import fetchjobsfromdb
 
 app = Flask(__name__)
 
@@ -30,11 +29,7 @@ app = Flask(__name__)
   }
 ]
 '''
-def fetchjobsfromdb():
-  with engine.connect() as conn:
-    result = conn.execute(text("select * from JOBS"))
-    jobs=[dict(row._asdict()) for row in result]
-    return jobs
+
     
 
 @app.route('/')
