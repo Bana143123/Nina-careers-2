@@ -1,9 +1,10 @@
 from sqlalchemy import create_engine, text
 import os
 
-dbconn_string = os.environ("Nina")
+
+my_secret = os.environ['reddy']
 engine = create_engine(
-  dbconn_string,
+  my_secret,
   connect_args={"ssl": {
     "ssl_ca": "/home/gord/client-ssl/ca.pem",
   }})
