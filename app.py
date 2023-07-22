@@ -1,47 +1,36 @@
-from flask import Flask,render_template,jsonify
-from database import fetchjobsfromdb
+from flask import Flask,render_template,jsonify,request
+#from database import fetchjobsfromdb
+import yaml as yl
 
 app = Flask(__name__)
 
-'''JOBS=[
-  {
-    'id':1,
-    'title':'Hair Groomer',
-    'location':'Bengaluru, India',
-    'salary':'Rs.70,000'
-  },
-  {
-    'id':2,
-    'title':'Facial specialist',
-    'location':'Coimbatore, India',
-    'salary':'Rs.50,000'
-  },
-  {
-    'id':3,
-    'title':'Spa Trainer',
-    'location':'Paris, London',
-  },
-{
-    'id':4,
-    'title':'Accountant',
-    'location':'Bengaluru, India',
-    'salary':'Rs.1,70,000'
-  }
-]
-'''
 
-    
-
+with open('config.yaml','r') as config:
+  load=yl.safe_load(config)
+#print(load)
+jobs=load['JOBS']
 @app.route('/')
 def hello_world():
-  jobs=fetchjobsfromdb()
+  
   return render_template('home.html',
                         jobs=jobs,
                         company_name='Nina')
-@app.route('/jobs')
-def job_item():
-  jobs=fetchjobsfromdb()
-  return jsonify(jobs)
+@app.route('/jobs/<int:id>')
+def job_item(id):
+  if id<1 or id>len(jobs):
+    return "no job found",404
+
+  
+  return render_template('jobpage.html',job=jobs[id-1])
+
+@app.route('/jobs/<int:id>/apply',methods=['post'])
+def apply(id):
+  data=request.form
+
+  return render_template('submit.html',job=jobs[id-1])
+
+
+
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0',debug=True)
+  app.run(debug=True)

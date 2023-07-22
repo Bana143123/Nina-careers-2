@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{job['title']}}- Nina Careers</title>
+    {% include 'bootstrap.html' %}
+    
+  </head>
+  <body>
+    {% include 'nav.html' %}
+    <div class='container'>
+      <h1 class="text-center mt-2 mb-4">Opportunity To Get Job In {{job.title}} Position</h1>
+      <div class="row">
+      <div class="col-md-6">
+      <b>Title:</b>
+      <p>{{job.title}}</p>
+      <b>Location:</b>
+      <p>{{job.location}}</p>
+      {% if 'salary' in job %}
+      <b>Salary:</b>
+      <p>{{job['salary']}}</p>
+      {% endif %}
+      </div>
+      <div class="d-none d-md-block col-md-4">
+        {% if job['title']=='Hair Groomer' %}
+        <img class='img-fluid' src='/static/female-dog.jpg'>
+        {% elif job['title']=='Facial specialist' %}
+        <img class='img-fluid' src='/static/facial.jpg'>
+        {% elif job['title']=='Spa Trainer' %}
+        <img class='img-fluid' src='/static/spa.jpg'>
+        {% else %}
+        <img class='img-fluid' src='/static/accountant.jpg'>
+        {% endif %}
+        </div>
+    
+    </div>
+    <b>Requirements:</b>
+    <ul type="circle">
+    <p>{{job.requirements}}</p>
+    </ul>
+    <b>Responsibilities:</b>
+    <ul type="circle">
+    <p>{{job.responsibilities}}</p>
+  </ul>
+      
+    <!----<div class='col-12' style="text-align: center;">
+        <a href="mailto:Ninaforfuture@Nina.com?subject=Application%20for%20{{job['title']}}&body=Hi%20Team%2C%0D%0AI%20want%20to%20apply%20for%20the%20position%20jobtitle.%20Below%20are%20my%20details%2C%0D%0A%0D%0AFirst%20Name%3A%20%5BYour%20First%20Name%5D%0D%0ALast%20Name%3A%20%5BYour%20last%20Name%5D%0D%0AContact%3A%20%5BYour%20Contact%20Number%5D%0D%0ALinkedIn%20Profile%20Link%3A%20%5BYour%20LinkedIn%20profile%20link%5D%0D%0AResume%20URL%3A%20%5BYour%20Resume%20Link%5D%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0ARegards%2C%0D%0A%5BYour%20Signature%5D" class="btn btn-outline-primary">Apply</a>
+      </div>-->
+      {% include 'application.html' %}
+      {% include 'footer.html' %}
+      </div>
+    </body>
+</html>

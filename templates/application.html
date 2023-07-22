@@ -1,0 +1,26 @@
+<form action="/jobs/{{job['id']}}/apply" method="post">
+    <h3>Application Form</h3>
+    
+    <div class="mb-2">
+    <label>Full Name:</label><br>
+    <input type="text" placeholder="ENTER YOUR NAME"><br>
+    </div>
+    <div class="mb-2">
+    <label>Email:</label><br>
+    <input type="email" placeholder="ENTER YOUR MAIL"><br>
+    </div>
+    <div class="mb-2">
+    <label>Education:</label><br>
+    <select>
+        <option value="B.TECH">B.tech</option>
+        <option value="b.sc">B.SC</option>
+        <option value="M.tech">M.TECH</option>
+        <option value="M.B.A">MBA</option>
+    </select>
+    </div>
+    <div class="mb-2">
+    <label>Resume link:</label><br>
+    <input type="url" placeholder="Upload your url"><br>
+    </div>
+    <input type="submit">
+</form>

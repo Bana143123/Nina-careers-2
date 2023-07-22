@@ -1,16 +1,17 @@
 <div style="margin-bottom:14px" class="border-bottom row" >
   <div class='col-10'>
-    <h4 style="margin-bottom:3px, color:rgb(80,80,80)">{{job['TITLE']}}</h4>
+    <h4 style="margin-bottom:3px;color:rgb(80,80,80)">{{job['title']}}</h4>
     <div style="color:rgb(120,120,120)">
-    Location: {{job['LOCATION']}}
+    Location: {{job['location']}}
     </div>
     <div>
     {% if 'salary' in job %}
-    <h6 style="color:rgb(130,130,130) ;">Salary: {{job['SALARY']}}</h6>
+    <h6 style="color:rgb(130,130,130) ;">Salary: {{job['salary']}}</h6>
     {% endif %}
     </div>
   </div>
   <div class='col-2'>
-    <a href="mailto:Ninaforfuture@Nina.com?subject=Application%20for%20{{job['title']}}&body=Hi%20Team%2C%0D%0AI%20want%20to%20apply%20for%20the%20position%20jobtitle.%20Below%20are%20my%20details%2C%0D%0A%0D%0AFirst%20Name%3A%20%5BYour%20First%20Name%5D%0D%0ALast%20Name%3A%20%5BYour%20last%20Name%5D%0D%0AContact%3A%20%5BYour%20Contact%20Number%5D%0D%0ALinkedIn%20Profile%20Link%3A%20%5BYour%20LinkedIn%20profile%20link%5D%0D%0AResume%20URL%3A%20%5BYour%20Resume%20Link%5D%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0A%0D%0ARegards%2C%0D%0A%5BYour%20Signature%5D" class="btn btn-outline-primary">Apply</a>
+    <a href="/jobs/{{job['id']}}" type="button" class="btn btn-outline-primary">Apply</a>
   </div>
+  
 </div>

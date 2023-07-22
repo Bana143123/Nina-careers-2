@@ -1,0 +1,33 @@
+JOBS: [
+  {
+    'id':1,
+    'title':'Hair Groomer',
+    'location':'Bengaluru, India',
+    'salary':'Rs.70,000',
+    'requirements':'The requirements for a hair groomer typically include strong skills in cutting, styling, and maintaining various types of hair, along with knowledge of current trends and techniques.',
+    'responsibilities':'The responsibilities of a hair groomer include providing professional hair grooming services such as cutting, styling, and maintaining the appearance of clients'
+  },
+  {
+    'id':2,
+    'title':'Facial specialist',
+    'location':'Coimbatore, India',
+    'salary':'Rs.50,000',
+    'requirements':'The requirements for a facial specialist typically include a state-approved esthetician or cosmetology license, specialized training in facial treatments and skincare, and a strong understanding of various skin types and conditions.',
+    'responsibilities':'A facial specialist is responsible for providing professional skincare treatments and analysis to clients, including facial cleansing, exfoliation, extraction, facial massage, and application of specialized skincare products.'
+  },
+  {
+    'id':3,
+    'title':'Spa Trainer',
+    'location':'Paris, London',
+    'requirements':'The requirements for a spa trainer typically include relevant certifications or qualifications in spa therapy, extensive knowledge of spa treatments and techniques, excellent communication and teaching skills, and the ability to create and deliver comprehensive training programs.',
+    'responsibilities':'The responsibilities of a spa trainer include designing and implementing training programs, conducting workshops and demonstrations, providing guidance and support to spa staff, and ensuring adherence to quality standards and customer satisfaction.'
+  },
+  {
+    'id':4,
+    'title':'Accountant',
+    'location':'Bengaluru, India',
+    'salary':'Rs.1,70,000',
+    'requirements':'The requirements for an accountant typically include a bachelor degree in accounting or a related field, strong mathematical and analytical skills, attention to detail, and knowledge of financial regulations and accounting software.',
+    'responsibilities':'The responsibilities of an accountant include managing financial records, preparing and analyzing financial statements, ensuring compliance with tax laws and regulations, and providing financial advice and support to individuals or organizations.'
+  }
+]
