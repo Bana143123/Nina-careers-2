@@ -1,4 +1,4 @@
-from flask import Flask,render_template,jsonify,request
+from flask import Flask,render_template,request
 #from database import fetchjobsfromdb
 import yaml as yl
 
@@ -25,7 +25,7 @@ def job_item(id):
 
 @app.route('/jobs/<int:id>/apply',methods=['post'])
 def apply(id):
-  data=request.form
+  #data=request.form
 
   return render_template('submit.html',job=jobs[id-1])
 
