@@ -1,4 +1,4 @@
 flask
 gunicorn
-yaml
+pyyaml
 pymysql
